@@ -1,0 +1,32 @@
+{
+    "name": "prinx/dir-dot-config",
+    "description": "Retrieve configuration from files in configuration directory.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prince Dorcis",
+            "email": "princedorcis@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "prinx/array-utils": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.2.5"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
