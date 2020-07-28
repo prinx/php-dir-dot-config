@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Config\\": "src/"
+            "Prinx\\": "src/"
         }
     },
     "autoload-dev": {

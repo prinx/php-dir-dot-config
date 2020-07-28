@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Prinx\Config;
+namespace Prinx;
 
 use Prinx\Arr;
 
