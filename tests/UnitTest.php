@@ -13,7 +13,7 @@ class EnvTest extends TestCase
 {
     public function testExample()
     {
-        $configArray = (new Config(__DIR__ . '/../../config/'))->get();
+        $configArray = (new Config(__DIR__.'/../../config/'))->get();
 
         $this->assertEquals(Arr::multiKeyGet('app.app_env', $configArray), 'production');
         $this->assertEquals(Arr::multiKeyGet('database.default.dbname', $configArray), 'test');
