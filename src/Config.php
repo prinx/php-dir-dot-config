@@ -28,7 +28,7 @@ class Config
      *
      * If array provided as configDirs, the config from those paths will be merge
      *
-     * @param string|string[] $configDirs The config folder path or an array of paths
+     * @param string|string[] $configDirs   The config folder path or an array of paths
      * @param string          $separator
      * @param string          $fileSuffix
      */
@@ -48,11 +48,11 @@ class Config
             $files = [];
 
             foreach ($iterator as $info) {
-                $filename = $info->getFileName();
-
-                if ('.' === $filename || '..' === $filename) {
+                if ($info->isDot()) {
                     continue;
                 }
+
+                $filename = $info->getFileName();
 
                 $name = substr($filename, 0, strlen($filename) - strlen($this->fileSuffix));
 
@@ -66,12 +66,12 @@ class Config
     /**
      * Get a configuration variable from the config.
      *
-     * @param string $key
-     * @param mixed  $default The default to return if the configuration is not found
-     * @param bool   $silent  If true, will shutdown the exception throwing if configuration variable not found and no default was passed.
      *
+     *
+     * @param  string               $key
+     * @param  mixed                $default The default to return if the configuration is not found
+     * @param  bool                 $silent  If true, will shutdown the exception throwing if configuration variable not found and no default was passed.
      * @throws \RuntimeException
-     *
      * @return Config|mixed
      */
     public function get($key = null, $default = null, $silent = false)
